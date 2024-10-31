@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-export default function SubmitEvent() {
+export default function SubmitEvent({loggedin}) {
     const [form, setForm] = useState({
         name: "",
         category: "",

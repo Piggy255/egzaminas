@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import AdminEventList from "./AdminEventList";
 import AdminCategoryEditor from "./AdminCategoryEditor";
 
-export default function AdminPage() {
+export default function AdminPage({ admin }) {
   const [form, setForm] = useState({
     name: "",
     category: "",
@@ -17,6 +17,9 @@ export default function AdminPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if(!admin){
+        navigate('/')
+    }
     async function fetchData() {
       const id = params.id?.toString() || undefined;
       console.log(id);

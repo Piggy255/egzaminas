@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([]);
@@ -36,7 +37,6 @@ const UpcomingEvents = () => {
   }
   return (
     <>
-    
     <ul>
       {events.map((event) => (
         <li>
